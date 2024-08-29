@@ -4,4 +4,31 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+})->name('home-index');
+
+
+// Route::view('/jogos', 'jogos', ['name' => 'Osmar']);
+
+
+// Route::get('/jogos', function(){
+//     return "eu sou lindo";
+// });
+
+
+// enviar com ou sem parametro passa ? e null na função
+// Route::get('/jogos/{id?}/{name?}', function($id = null, $name = null){
+//     return view('jogos', ['idJogo' => $id, 'nomeJogo' =>$name]);
+
+
+// })->where(['id', '[0-9]+', 'name' => '[a-z]+']);
+
+// parametro para receber texto ->where('name', '[A-Za-z]+')
+
+Route::get('/jogos', function(){
+    return view('jogos');
+});
+
+// erro ao localizar a rota cai neste callback
+Route::fallback(function(){
+    return 'Rota não encontrada';
 });
