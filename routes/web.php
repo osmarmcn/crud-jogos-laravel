@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\JogosController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -24,9 +25,11 @@ Route::get('/', function () {
 
 // parametro para receber texto ->where('name', '[A-Za-z]+')
 
-Route::get('/jogos', function(){
-    return view('jogos');
-});
+Route::get('/jogos', [JogosController::class, 'index']);
+
+// Route::get('/jogos', function(){
+//     return view('jogos');
+// });
 
 // erro ao localizar a rota cai neste callback
 Route::fallback(function(){

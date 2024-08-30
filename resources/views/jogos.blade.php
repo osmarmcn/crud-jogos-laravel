@@ -7,6 +7,8 @@
 </head>
 <body>
     <h1>teste</h1>
+    <p>{{$id}}</p>
+    <p>{{$nome}}</p>
 
     <a href="{{route('home-index')}}">clique aqui</a>
 </body>
