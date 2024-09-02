@@ -9,6 +9,6 @@ class JogosController extends Controller
     public function index(){
         $nome = 'FiFA';
         $id = 5;
-        return view('jogos', ['nome' => $nome, 'id' => $id]);
+        return view('jogos.index', ['nome' => $nome, 'id' => $id]);
     }
 }
