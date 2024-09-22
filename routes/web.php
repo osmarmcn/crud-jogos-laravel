@@ -25,11 +25,22 @@ Route::get('/', function () {
 
 // parametro para receber texto ->where('name', '[A-Za-z]+')
 
-Route::get('/jogos', [JogosController::class, 'index']);
+// Route::get('/jogos', [JogosController::class, 'index']);
 
 // Route::get('/jogos', function(){
 //     return view('jogos');
 // });
+
+
+// vou criar um prefixo para todas as rotas
+Route::prefix('jogos')->group(function(){
+    Route::get('/', [JogosController::class, 'index'])->name('jogos-index');
+    Route::get('/create', [JogosController::class, 'create'])->name('jogos-create');
+    Route::post('/', [JogosController::class, 'store'])->name('jogos-store');
+
+});
+
+
 
 // erro ao localizar a rota cai neste callback
 Route::fallback(function(){

@@ -10,28 +10,7 @@
 <body>
     @yield('content')
 
-    <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Categoria</th>
-      <th scope="col">Ano de Criação</th>
-      <th scope="col">valor</th>
-    </tr>
-  </thead>
-  <tbody>
-    @foreach($jogos as $jogo)
-    <tr>
-      <th >{{$jogo->id}}</th>
-      <th>{{$jogo->nome}}</th>
-      <th>{{$jogo->categoria}}</th>
-      <th>{{$jogo->ano_criacao}}</th>
-      <th>{{$jogo->valor}}</th>
-    </tr>
-    @endforeach
-  </tbody>
-</table>
+    
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
